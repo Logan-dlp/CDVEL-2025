@@ -1,7 +1,7 @@
 ﻿using UnityEngine.InputSystem;
 using UnityEngine;
 
-namespace Players.Mouvements
+namespace Players.Movements
 {
     using Extensions;
     using Commands;

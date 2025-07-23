@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Players.Mouvements
+namespace Players.Movements
 {
     using Commands;
     
