@@ -7,6 +7,12 @@
         
         public void AddPoints(int points)
         {
+            if (_score + points < 0)
+            {
+                _score = 0;
+                return;
+            }
+            
             _score += points;
         }
     }
