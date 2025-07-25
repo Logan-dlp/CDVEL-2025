@@ -22,6 +22,7 @@ namespace Scores
         public void OnAddedPoints(int points)
         {
             _scoreSystem.AddPoints(points);
+            OnScoreUpdated?.Invoke(_scoreSystem.Score);
         }
     }
 }
