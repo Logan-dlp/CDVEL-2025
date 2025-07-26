@@ -10,14 +10,20 @@ namespace Hearts
         public event Action OnTransmittedPoint;
         
         [SerializeField] private int _points;
+        private bool _enableCollider = true;
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.transform.TryGetComponent<ScoreHandler>(out var scoreHandler))
+            if (_enableCollider)
             {
-                scoreHandler.OnAddedPoints(_points);
-                OnTransmittedPoint?.Invoke();
-                Destroy(gameObject);
+                if (collision.transform.TryGetComponent<ScoreHandler>(out var scoreHandler))
+                {
+                    _enableCollider  = false;
+                    scoreHandler.OnAddedPoints(_points);
+                    OnTransmittedPoint?.Invoke();
+                    Destroy(gameObject);
+                }
+                
             }
         }
     }
