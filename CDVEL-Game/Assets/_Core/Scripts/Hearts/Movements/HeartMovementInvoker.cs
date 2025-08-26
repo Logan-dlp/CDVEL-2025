@@ -14,7 +14,7 @@ namespace Hearts.Movements
         private Vector3 _direction;
         private CharacterController _controller;
 
-        private bool test = true;
+        private bool _isJump = true;
 
         private void Awake()
         {
@@ -54,14 +54,14 @@ namespace Hearts.Movements
                 }
             }
 
-            if (test && _direction.y == 0)
+            if (_isJump && _direction.y == 0)
             {
                 _direction.x = 0;
             }
 
             if (_direction.y != 0)
             {
-                test = true;
+                _isJump = true;
             }
 
             if (_direction == Vector3.zero)
@@ -75,7 +75,7 @@ namespace Hearts.Movements
         {
             if (_jumperLayer == (_jumperLayer | (1 << collision.collider.gameObject.layer)))
             {
-                test = false;
+                _isJump = false;
                 Vector3 jumpedDirection = transform.position - 2 * collision.contacts[0].normal * Vector3.Dot(collision.contacts[0].normal, transform.position);
                 _direction = new Vector3(-jumpedDirection.x, jumpedDirection.y, _direction.z);
             }
