@@ -31,14 +31,14 @@ namespace Timers
         {
             if (_isRunning)
             {
-                _timer -= Time.deltaTime;
-                OnTimerUpdate?.Invoke(_timer);
-                if (_timer <= 0)
+                _currentTimer -= Time.deltaTime;
+                if (_currentTimer <= 0)
                 {
+                    _currentTimer = 0;
                     StopTimer();
                     OnTimerFinished?.Invoke();
-                    StopTimer();
                 }
+                OnTimerUpdate?.Invoke(_currentTimer);
             }
         }
 
@@ -50,6 +50,7 @@ namespace Timers
         public void ResetTimer()
         {
             _currentTimer = _timer;
+            OnTimerUpdate?.Invoke(_currentTimer);
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Timers
     {
         public event Action OnStartedTimer;
         public event Action OnStoppedTimer;
+        public event Action OnResetTimer;
         
         public event Action<float> OnTimerUpdate; 
         
@@ -18,29 +19,48 @@ namespace Timers
 
         private void Update()
         {
-            _timerSystem.UpdateTimer();
+            _timerSystem?.UpdateTimer();
         }
 
-        protected override void OnInitializing()
+        protected override void Awake()
         {
-            base.OnInitializing();
+            base.Awake();
             _timerSystem = new TimerSystem(_timer);
-        }
-
-        protected override void OnInitialized()
-        {
-            base.OnInitialized();
+            
             OnStartedTimer += _timerSystem.StartTimer;
-            _timerSystem.OnTimerUpdate += OnTimerUpdate;
             OnStoppedTimer += _timerSystem.StopTimer;
+            OnResetTimer += _timerSystem.ResetTimer;
+            
+            _timerSystem.OnTimerUpdate += OnTimerUpdate;
+            
+            OnTimerUpdate?.Invoke(_timer);
         }
 
-        public override void Uninitialize()
+        public void OnDestroy()
         {
-            base.Uninitialize();
             OnStartedTimer -= _timerSystem.StartTimer;
-            _timerSystem.OnTimerUpdate -= OnTimerUpdate;
             OnStoppedTimer -= _timerSystem.StopTimer;
+            OnResetTimer -= _timerSystem.ResetTimer;
+            
+            _timerSystem.OnTimerUpdate -= OnTimerUpdate;
+        }
+
+        [ContextMenu("Start Timer")]
+        public void StartTimer()
+        {
+            OnStartedTimer?.Invoke();
+        }
+
+        [ContextMenu("Stop Timer")]
+        public void StopTimer()
+        {
+            OnStoppedTimer?.Invoke();
+        }
+
+        [ContextMenu("Reset Timer")]
+        public void ResetTimer()
+        {
+            OnResetTimer?.Invoke();
         }
     }
 }
