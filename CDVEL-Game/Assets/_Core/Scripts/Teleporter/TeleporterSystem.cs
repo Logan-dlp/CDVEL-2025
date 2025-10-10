@@ -14,16 +14,16 @@ namespace Teleporter
 
         public void Teleport(GameObject gameObject)
         {
-            CharacterController characterController = new();
-            
-            if (gameObject.TryGetComponent<CharacterController>(out CharacterController controller))
+            if (gameObject.TryGetComponent(out CharacterController controller))
             {
-                characterController = controller;
+                controller.enabled = false;
+                gameObject.transform.position = _arrivedTransform.position;
+                controller.enabled = true;
+                
+                return;
             }
-
-            characterController.enabled = false;
+            
             gameObject.transform.position = _arrivedTransform.position;
-            characterController.enabled = true;
         }
     }
 }
