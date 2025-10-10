@@ -5,7 +5,6 @@ namespace Timers
     public interface ITimerSystem
     {
         public event Action OnTimerFinished;
-        
         public event Action<float> OnTimerUpdate;
         
         public float CurrentTimer { get; }
