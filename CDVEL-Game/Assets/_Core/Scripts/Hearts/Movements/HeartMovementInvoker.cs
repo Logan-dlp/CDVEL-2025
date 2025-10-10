@@ -8,76 +8,40 @@ namespace Hearts.Movements
     [RequireComponent(typeof(CharacterController), typeof(Collider))]
     public class HeartMovementInvoker : CommandInvoker
     {
+        private const float _boundsRestitution = .8f;
+        
         [SerializeField] private LayerMask _jumperLayer;
-        [SerializeField] private float _gravityDetectionDistance;
 
         private Vector3 _direction;
         private CharacterController _controller;
-
-        private bool _isJump = true;
 
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             ExecuteMovement();
         }
 
         private void ExecuteMovement()
         {
-            _direction.y = gameObject.ApplyGravity(_direction.y, _gravityDetectionDistance);
+            _direction.y = gameObject.ApplyGravity(_direction.y, 0);
             
-            if (_direction.x > 0)
-            {
-                if (_direction.x - Time.fixedDeltaTime < 0)
-                {
-                    _direction.x = 0;
-                }
-                else
-                {
-                    _direction.x -= Time.fixedDeltaTime;
-                }
-            }
-            
-            if (_direction.x < 0)
-            {
-                if (_direction.x + Time.fixedDeltaTime > 0)
-                {
-                    _direction.x = 0;
-                }
-                else
-                {
-                    _direction.x += Time.fixedDeltaTime;
-                }
-            }
-
-            if (_isJump && _direction.y == 0)
-            {
-                _direction.x = 0;
-            }
-
-            if (_direction.y != 0)
-            {
-                _isJump = true;
-            }
-
-            if (_direction == Vector3.zero)
-                return;
-            
-            HeartMovementCommand newCommand = new HeartMovementCommand(gameObject, _controller, _direction);
+            HeartMovementCommand newCommand = new HeartMovementCommand(_controller, _direction, _boundsRestitution);
             ExecuteCommand(newCommand);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            if (_jumperLayer == (_jumperLayer | (1 << collision.collider.gameObject.layer)))
+            if (_jumperLayer == (_jumperLayer | (1 << hit.gameObject.layer)))
             {
-                _isJump = false;
-                Vector3 jumpedDirection = transform.position - 2 * collision.contacts[0].normal * Vector3.Dot(collision.contacts[0].normal, transform.position);
-                _direction = new Vector3(-jumpedDirection.x, jumpedDirection.y, _direction.z);
+                Vector3 hitNormal = hit.normal;
+                Vector3 velocity = _direction;
+            
+                _direction = velocity - (1 + _boundsRestitution) * Vector3.Dot(velocity, hitNormal) * hitNormal;
+                _direction.z = 0;
             }
         }
     }
