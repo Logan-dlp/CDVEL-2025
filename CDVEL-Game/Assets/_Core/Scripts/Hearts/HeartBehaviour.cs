@@ -13,12 +13,12 @@ namespace Hearts
         
         [SerializeField] private int _points;
         private bool _enableCollider = true;
-
-        private void OnCollisionEnter(Collision collision)
+        
+        private void OnControllerColliderHit(ControllerColliderHit hit)
         {
             if (_enableCollider)
             {
-                if (collision.transform.TryGetComponent<ScoreHandler>(out var scoreHandler))
+                if (hit.transform.TryGetComponent<ScoreHandler>(out var scoreHandler))
                 {
                     _enableCollider = false;
                     scoreHandler.OnAddedPoints(_points);
@@ -26,7 +26,7 @@ namespace Hearts
                     Destroy(gameObject);
                 }
 
-                if (_unspawnLayer == (_unspawnLayer | (1 << collision.gameObject.layer)))
+                if (_unspawnLayer == (_unspawnLayer | (1 << hit.gameObject.layer)))
                 {
                     _enableCollider = false;
                     Destroy(gameObject);

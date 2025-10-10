@@ -6,33 +6,53 @@ namespace Hearts.Movements
     
     public class HeartMovementCommand : ICommand
     {
-        private GameObject _gameObject;
         private CharacterController _controller;
         private Vector3 _direction;
+        private float _boundsRestitution;
         
-        public HeartMovementCommand(GameObject gameObject, 
-            CharacterController controller, 
-            Vector3 direction)
+        public HeartMovementCommand(CharacterController controller, 
+            Vector3 direction,
+            float boundsRestitution)
         {
-            _gameObject = gameObject;
             _controller = controller;
             _direction = direction;
+            _boundsRestitution = boundsRestitution;
         }
         
         public void Execute()
         {
-            Vector3 currentMovement = _gameObject.transform.right * _direction.x
-                                      + _gameObject.transform.up * _direction.y;
+            CollisionFlags flags = _controller.Move(_direction * Time.deltaTime);
+
+            if ((flags & CollisionFlags.Below) != 0)
+            {
+                if (_direction.y < 0)
+                {
+                    _direction.y = -_direction.y * _boundsRestitution;
+                }
+            }
             
-            _controller.Move(currentMovement * Time.fixedDeltaTime);
+            if (Mathf.Abs(_direction.y) < .05f && (flags & CollisionFlags.Below) != 0)
+            {
+                _direction.y = 0;
+            }
         }
 
         public void Undo()
         {
-            Vector3 currentMovement = _gameObject.transform.right * _direction.x
-                                      + _gameObject.transform.up * _direction.y;
+            CollisionFlags flags = _controller.Move(-_direction * Time.deltaTime);
+
+            if ((flags & CollisionFlags.Below) != 0)
+            {
+                if (_direction.y < 0)
+                {
+                    _direction.y = -_direction.y * .8f;
+                }
+            }
             
-            _controller.Move(-currentMovement * Time.fixedDeltaTime);
+            if (Mathf.Abs(_direction.y) < .05f && (flags & CollisionFlags.Below) != 0)
+            {
+                _direction.y = 0;
+            }
         }
     }
 }
