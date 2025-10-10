@@ -3730,7 +3730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc121b14fb2444268f751cdb1e39eaf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timerText: {fileID: 1987269593}
 --- !u!1 &2090826700
 GameObject:
   m_ObjectHideFlags: 0
@@ -4003,6 +4002,7 @@ SceneRoots:
   - {fileID: 120662264}
   - {fileID: 2096935499}
   - {fileID: 2112679528}
+  - {fileID: 1745566673}
   - {fileID: 837729253}
   - {fileID: 1458665695}
   - {fileID: 746313736}
@@ -4011,6 +4011,5 @@ SceneRoots:
   - {fileID: 1854983609}
   - {fileID: 182854351}
   - {fileID: 805759805}
-  - {fileID: 1745566673}
   - {fileID: 155208427}
   - {fileID: 1136541372}

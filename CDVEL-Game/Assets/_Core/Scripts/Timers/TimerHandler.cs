@@ -27,9 +27,9 @@ namespace Timers
             OnStartedTimer += _timerSystem.StartTimer;
             OnStoppedTimer += _timerSystem.StopTimer;
             OnResetTimer += _timerSystem.ResetTimer;
-            
-            _timerSystem.OnTimerFinished += OnTimerFinished;
-            _timerSystem.OnTimerUpdate += OnTimerUpdate;
+
+            _timerSystem.OnTimerFinished += () => OnTimerFinished?.Invoke();
+            _timerSystem.OnTimerUpdate += (timer) => OnTimerUpdate?.Invoke(timer);
         }
 
         private void Start()
@@ -39,7 +39,7 @@ namespace Timers
 
         private void Update()
         {
-            _timerSystem?.UpdateTimer();
+            _timerSystem.UpdateTimer();
         }
         
         public void OnDestroy()
@@ -47,9 +47,6 @@ namespace Timers
             OnStartedTimer -= _timerSystem.StartTimer;
             OnStoppedTimer -= _timerSystem.StopTimer;
             OnResetTimer -= _timerSystem.ResetTimer;
-            
-            _timerSystem.OnTimerFinished -= OnTimerFinished;
-            _timerSystem.OnTimerUpdate -= OnTimerUpdate;
         }
 
         [ContextMenu("Start Timer")]

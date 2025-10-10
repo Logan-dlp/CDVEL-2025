@@ -6,7 +6,7 @@ namespace Timers.Events
     {
         [SerializeField] private GameObject _timerObject;
 
-        private void Awake()
+        private void Start()
         {
             _timerObject.SetActive(false);
             TimerHandler.Instance.OnTimerFinished += OnTimerFinish;
