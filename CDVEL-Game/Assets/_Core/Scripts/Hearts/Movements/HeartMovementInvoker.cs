@@ -42,7 +42,7 @@ namespace Hearts.Movements
         {
             _direction.y = gameObject.ApplyGravity(_direction.y, 0);
             
-            HeartMovementCommand newCommand = new HeartMovementCommand(_controller, _direction, _boundsRestitution);
+            HeartMovementCommand newCommand = new(_controller, _direction, _boundsRestitution);
             ExecuteCommand(newCommand);
         }
 
@@ -55,7 +55,7 @@ namespace Hearts.Movements
             {
                 _direction = velocity - (1 + _bumperBoundsForce) * Vector3.Dot(velocity, hitNormal) * hitNormal;
                 _direction.z = 0;
-
+            
                 return;
             }
             
