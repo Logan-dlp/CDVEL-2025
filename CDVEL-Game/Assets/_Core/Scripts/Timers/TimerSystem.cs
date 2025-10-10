@@ -19,7 +19,7 @@ namespace Timers
         public TimerSystem(float timer)
         {
             _timer = timer;
-            ResetTimer();
+            _currentTimer = _timer;
         }
         
         public void StartTimer()
