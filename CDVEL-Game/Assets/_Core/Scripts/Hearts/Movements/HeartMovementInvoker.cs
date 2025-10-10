@@ -9,9 +9,11 @@ namespace Hearts.Movements
     public class HeartMovementInvoker : CommandInvoker
     {
         private const float _boundsRestitution = .8f;
-        
+
+        [SerializeField] private float _despawnTime;
         [SerializeField] private LayerMask _jumperLayer;
 
+        private float _timerToDespawn = 0;
         private Vector3 _direction;
         private CharacterController _controller;
 
@@ -23,6 +25,16 @@ namespace Hearts.Movements
         private void Update()
         {
             ExecuteMovement();
+
+            if (_direction.y < .4f)
+                _timerToDespawn += Time.deltaTime;
+            else
+                _timerToDespawn = 0;
+
+            if (_timerToDespawn >= _despawnTime)
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void ExecuteMovement()
