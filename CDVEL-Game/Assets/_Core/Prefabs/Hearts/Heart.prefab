@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3715551795010551623}
   - component: {fileID: 5640435467185006155}
   - component: {fileID: 3195666963116897011}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _despawnTime: 2
+  _bumperBoundsForce: 1.2
   _jumperLayer:
     serializedVersion: 2
     m_Bits: 64

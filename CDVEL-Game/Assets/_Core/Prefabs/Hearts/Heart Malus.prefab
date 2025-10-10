@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8799832645130705684}
   - component: {fileID: 1215313967998238441}
   - component: {fileID: 4112460932711661820}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Heart Malus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _despawnTime: 2
+  _bumperBoundsForce: 1.2
   _jumperLayer:
     serializedVersion: 2
     m_Bits: 64

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8750560883667677982}
   - component: {fileID: 85372857632351569}
   - component: {fileID: 546147373248467882}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Heart Bonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _despawnTime: 2
+  _bumperBoundsForce: 1.2
   _jumperLayer:
     serializedVersion: 2
     m_Bits: 64
