@@ -115,7 +115,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.19, y: 5.13, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 15}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 56854435892751899}
   m_Father: {fileID: 0}
@@ -189,8 +189,8 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 0.5
-  m_Radius: 0.5
+  m_Height: 0.015
+  m_Radius: 0.015
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08

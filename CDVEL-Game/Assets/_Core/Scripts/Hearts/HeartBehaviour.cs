@@ -33,5 +33,10 @@ namespace Hearts
                 }
             }
         }
+
+        private void OnBecameInvisible()
+        {
+            Destroy(gameObject);
+        }
     }
 }
