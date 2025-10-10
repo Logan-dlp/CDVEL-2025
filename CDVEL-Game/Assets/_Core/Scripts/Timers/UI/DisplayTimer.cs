@@ -7,12 +7,12 @@ namespace Timers
     
     public class DisplayTimer : MonoBehaviour, IDisplay
     {
-        [SerializeField] private TextMeshProUGUI _timerText;
-
+        private TextMeshProUGUI _timerText;
         private float _currentTimer;
 
         private void Awake()
         {
+            _timerText = GetComponent<TextMeshProUGUI>();
             TimerHandler.Instance.OnTimerUpdate += ChangeTimer;
         }
 
