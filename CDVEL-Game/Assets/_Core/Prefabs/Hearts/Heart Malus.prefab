@@ -118,6 +118,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1972629701263198616}
+  - {fileID: 3132430327791183858}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3198873265028162431
@@ -229,3 +230,107 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _points: -1
+--- !u!1001 &2543200224392569377
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 983530860930142459}
+    m_Modifications:
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0072
+      objectReference: {fileID: 0}
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816571943562160334, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816571943562160334, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816571943562160334, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.14285713
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816571943562160334, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816571943562160334, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 40478
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816571943562160334, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373648311956940553, guid: caab89175151f4146ab7057ba402b50a,
+        type: 3}
+      propertyPath: m_Name
+      value: MALUS_PickupHeart_Effect (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: caab89175151f4146ab7057ba402b50a, type: 3}
+--- !u!4 &3132430327791183858 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 591066562832336339, guid: caab89175151f4146ab7057ba402b50a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2543200224392569377}
+  m_PrefabAsset: {fileID: 0}
