@@ -398,6 +398,7 @@ MonoBehaviour:
   - {fileID: 4947147803150413348, guid: e72a6831bcbaa524f915ffd0f8d8bfae, type: 3}
   - {fileID: 2320692401391433225, guid: 86fbe27c737d108439ae334b2b32d6fb, type: 3}
   - {fileID: 6657135690856565766, guid: 441727b12e1314e4fb1b0d9b8bfdf8f1, type: 3}
+  _minDistanceBetweenSpawn: 2
   _minSpawnRate: 0.5
   _maxSpawnRate: 1
 --- !u!61 &155208426
@@ -2172,7 +2173,7 @@ GameObject:
   - component: {fileID: 1312849151}
   - component: {fileID: 1312849150}
   - component: {fileID: 1312849149}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
