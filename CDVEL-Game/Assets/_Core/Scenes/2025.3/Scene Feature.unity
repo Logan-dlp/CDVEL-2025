@@ -395,9 +395,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab:
-  - {fileID: 4947147803150413348, guid: e72a6831bcbaa524f915ffd0f8d8bfae, type: 3}
-  - {fileID: 2320692401391433225, guid: 86fbe27c737d108439ae334b2b32d6fb, type: 3}
-  - {fileID: 6657135690856565766, guid: 441727b12e1314e4fb1b0d9b8bfdf8f1, type: 3}
+  - {fileID: 8916873012324262667, guid: a5b4011f917ac504da06377565ee3563, type: 3}
+  - {fileID: 8660802396052063849, guid: caa7fdbdd7b8e974c94a34c8c8857692, type: 3}
+  - {fileID: 5726812581265100926, guid: 068830dfee4ddbd4f95ef018db339f3e, type: 3}
   _minDistanceBetweenSpawn: 2
   _minSpawnRate: 0.5
   _maxSpawnRate: 1
