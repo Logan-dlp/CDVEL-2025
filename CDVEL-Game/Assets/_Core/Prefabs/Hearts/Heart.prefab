@@ -243,37 +243,7 @@ PrefabInstance:
     - target: {fileID: 853768405355165499, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
         type: 3}
       propertyPath: m_Name
-      value: PickupHeart_Effect
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678082316898769300, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
-        type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678082316898769300, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.18827438
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678082316898769300, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678082316898769300, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
-        type: 3}
-      propertyPath: InitialModule.startColor.minColor.b
-      value: 0.9529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678082316898769300, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
-        type: 3}
-      propertyPath: InitialModule.startColor.minColor.g
-      value: 0.07843138
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678082316898769300, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
-        type: 3}
-      propertyPath: InitialModule.startColor.minColor.r
-      value: 0.86225396
+      value: VFX_PickUpObject
       objectReference: {fileID: 0}
     - target: {fileID: 9082764550467419164, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
         type: 3}
@@ -283,7 +253,7 @@ PrefabInstance:
     - target: {fileID: 9082764550467419164, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9082764550467419164, guid: 20b18b7a08ff1274abc62ef58b0ebaea,
         type: 3}

@@ -18,6 +18,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heart Normal
       objectReference: {fileID: 0}
+    - target: {fileID: 6033486728050241003, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.18827438
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033486728050241003, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033486728050241003, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.9529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033486728050241003, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.07843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033486728050241003, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.86225396
+      objectReference: {fileID: 0}
     - target: {fileID: 6422173452579892842, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
         type: 3}
       propertyPath: m_LocalPosition.x
