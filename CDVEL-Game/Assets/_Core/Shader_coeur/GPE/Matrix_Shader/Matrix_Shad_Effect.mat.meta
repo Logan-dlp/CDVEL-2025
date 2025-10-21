@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:CDVEL-Game/Assets/_Core/Animations/Players/PlayerAnimations.controller.meta
+guid: bd1a722ad8e76ee439c8cc145c53ba80
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+========
+guid: 749bfac435dd6f24daddb193d2af0357
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+>>>>>>>> HeartShader:CDVEL-Game/Assets/_Core/Shader/GPE/Matrix_Shader/Matrix_Shad_Effect.mat.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
