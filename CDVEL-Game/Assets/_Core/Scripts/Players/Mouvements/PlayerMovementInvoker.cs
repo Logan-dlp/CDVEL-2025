@@ -10,17 +10,33 @@ namespace Players.Movements
     public class PlayerMovementInvoker : CommandInvoker
     {
         [SerializeField] private float _speed;
+        [SerializeField] private float _acceleration;
         [SerializeField] private float _jumpForce;
         [SerializeField] private float _gravityDetectionDistance;
 
         private bool _isJumped;
         private bool _isGrounded;
-        private Vector3 _direction;
+        
+        private float _currentSpeed;
+        private float _skinRotationOffset;
+        
+        private Vector3 _velocity;
+        
+        private Transform _skin;
         private CharacterController _controller;
 
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
+            
+            foreach (Transform child in transform)
+            {
+                if (child.tag == "Skin")
+                    _skin = child;
+                break;
+            }
+            
+            _skinRotationOffset = _skin.rotation.y;
         }
 
         private void Update()
@@ -28,7 +44,19 @@ namespace Players.Movements
             ExecuteMovement();
         }
 
-        public void SetDirection(InputAction.CallbackContext ctx) => _direction = new Vector3(ctx.ReadValue<Vector2>().x, _direction.y, 0);
+        public void SetDirection(InputAction.CallbackContext ctx)
+        {
+            _velocity = new Vector3(ctx.ReadValue<Vector2>().x, _velocity.y, 0);
+
+            if (Mathf.Abs(_velocity.x) >= .75f)
+            {
+                int direction = (int)Mathf.Sign(_velocity.x);
+                _skin.rotation = Quaternion.Euler(0, _skinRotationOffset + (90 * direction), 0);
+            }
+
+            if (ctx.canceled)
+                _currentSpeed = 0;
+        }
 
         public void ExecuteJump(InputAction.CallbackContext ctx)
         {
@@ -40,19 +68,23 @@ namespace Players.Movements
 
         private void ExecuteMovement()
         {
-            _direction.y = gameObject.ApplyGravity(_direction.y, _gravityDetectionDistance, Physics.gravity.y);
+            _velocity.y = gameObject.ApplyGravity(_velocity.y, _gravityDetectionDistance, Physics.gravity.y);
             _isGrounded = gameObject.IsGrounded(_gravityDetectionDistance);
+            
+            if (_velocity.x != 0)
+                if (_currentSpeed < _speed)
+                    _currentSpeed = Mathf.Min(_currentSpeed + Time.deltaTime * _acceleration, _speed);
             
             if (_isJumped)
             {
-                _direction = new Vector3(_direction.x, Mathf.Sqrt(_jumpForce * -2f * Physics.gravity.y), 0);
+                _velocity = new Vector3(_velocity.x, Mathf.Sqrt(_jumpForce * -2f * Physics.gravity.y), 0);
                 _isJumped = false;
             }
 
-            if (_direction == Vector3.zero)
+            if (_velocity == Vector3.zero)
                 return;
             
-            PlayerMovementCommand newCommand = new PlayerMovementCommand(gameObject, _controller, _direction, _speed);
+            PlayerMovementCommand newCommand = new PlayerMovementCommand(gameObject, _controller, _velocity, _currentSpeed);
             ExecuteCommand(newCommand);
         }
     }

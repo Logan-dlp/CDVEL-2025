@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 6111391036981819204}
   m_Layer: 0
   m_Name: A_Walk
-  m_TagString: Untagged
+  m_TagString: Skin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1004,7 +1004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b709e9275bd481a93e750934200bc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2.25
+  _speed: 5
+  _acceleration: 15
   _jumpForce: 2
   _gravityDetectionDistance: 0.8
 --- !u!1 &8687814250518341330
