@@ -40,7 +40,7 @@ namespace Players.Movements
 
         private void ExecuteMovement()
         {
-            _direction.y = gameObject.ApplyGravity(_direction.y, _gravityDetectionDistance);
+            _direction.y = gameObject.ApplyGravity(_direction.y, _gravityDetectionDistance, Physics.gravity.y);
             _isGrounded = gameObject.IsGrounded(_gravityDetectionDistance);
             
             if (_isJumped)

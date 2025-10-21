@@ -10,11 +10,12 @@ namespace Hearts.Movements
     {
         private const float _boundsRestitution = .8f;
 
+        [SerializeField] private float _gravity = -9.81f;
         [SerializeField] private float _despawnTime;
         [SerializeField] private float _bumperBoundsForce;
         [SerializeField] private LayerMask _jumperLayer;
 
-        private float _timerToDespawn = 0;
+        private float _timerToDespawn;
         private Vector3 _direction;
         private CharacterController _controller;
 
@@ -40,7 +41,7 @@ namespace Hearts.Movements
 
         private void ExecuteMovement()
         {
-            _direction.y = gameObject.ApplyGravity(_direction.y, 0);
+            _direction.y = gameObject.ApplyGravity(_direction.y, 0, _gravity);
             
             HeartMovementCommand newCommand = new(_controller, _direction, _boundsRestitution);
             ExecuteCommand(newCommand);
