@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Matrix_Shad_Effect
-  m_Shader: {fileID: -6465566751694194690, guid: 12f6fc5f23dc4eb4e82cdadce5048c83,
+  m_Shader: {fileID: -6465566751694194690, guid: faae3374d50ee994797524b2961419ac,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GradiantTexture:
-        m_Texture: {fileID: 2800000, guid: c825d712cad70e84ab074b12b10ac0c8, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -58,7 +58,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatrixTexture:
-        m_Texture: {fileID: 2800000, guid: 0ee6a90da0daa1d47adf2c69f1894bbf, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -74,7 +74,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_e036a684a81b4fb595e9e1cbf042e2c5_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: e9cb0fce59f32704c895846630f26219, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
