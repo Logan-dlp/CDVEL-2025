@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ed40147e516205b4d8d526e1e65eb20a
+guid: 252b06c5c05bacb4e8abd8f4c47a7bc0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: A_Running
-      takeName: Take 001
-      internalID: 1827226128182048838
-      firstFrame: -10
-      lastFrame: 21
+      name: A_Idle
+      takeName: mixamo.com
+      internalID: -203655887218126122
+      firstFrame: 0
+      lastFrame: 499
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -99,7 +99,7 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 180
+    normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
