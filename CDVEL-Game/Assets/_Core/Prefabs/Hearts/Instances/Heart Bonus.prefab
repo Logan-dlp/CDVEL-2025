@@ -13,11 +13,22 @@ PrefabInstance:
       propertyPath: _points
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3525890078888575365, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2540817853737639666, guid: 35f0dcbdbf98d554fae98985852fb8e2,
+        type: 3}
     - target: {fileID: 4947147803150413348, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
         type: 3}
       propertyPath: m_Name
       value: Heart Bonus
       objectReference: {fileID: 0}
+    - target: {fileID: 5393890002059982614, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e0bf443eb4fedc34d8904071fcff678b, type: 2}
     - target: {fileID: 6033486728050241003, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
         type: 3}
       propertyPath: ShapeModule.radius.value
