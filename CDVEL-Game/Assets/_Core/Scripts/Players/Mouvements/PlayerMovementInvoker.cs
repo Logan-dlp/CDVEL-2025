@@ -1,5 +1,6 @@
 ﻿using UnityEngine.InputSystem;
 using UnityEngine;
+using System;
 
 namespace Players.Movements
 {
@@ -9,6 +10,8 @@ namespace Players.Movements
     [RequireComponent(typeof(CharacterController), typeof(Collider))]
     public class PlayerMovementInvoker : CommandInvoker
     {
+        public event Action<Vector3, float> OnVelocityChange; 
+        
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _jumpForce;
@@ -80,6 +83,8 @@ namespace Players.Movements
                 _velocity = new Vector3(_velocity.x, Mathf.Sqrt(_jumpForce * -2f * Physics.gravity.y), 0);
                 _isJumped = false;
             }
+            
+            OnVelocityChange?.Invoke(_velocity, _currentSpeed/_speed);
 
             if (_velocity == Vector3.zero)
                 return;
