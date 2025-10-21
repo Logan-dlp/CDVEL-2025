@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_ParticulePixelShader
+  m_Name: MAT_CoeurMALUS
   m_Shader: {fileID: -6465566751694194690, guid: 31a5643c5564c1044a769afbe89f86fd,
     type: 3}
   m_Parent: {fileID: 0}

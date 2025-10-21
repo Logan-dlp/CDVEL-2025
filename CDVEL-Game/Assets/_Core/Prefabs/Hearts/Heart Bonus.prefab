@@ -293,11 +293,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BONUS_PickupHeart_Effect (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8379523806793737622, guid: 28374b3446215d448b1d6888c8e5c501,
-        type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
