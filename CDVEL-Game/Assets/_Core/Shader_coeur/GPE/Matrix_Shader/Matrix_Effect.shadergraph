@@ -1740,7 +1740,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"0ee6a90da0daa1d47adf2c69f1894bbf\",\"type\":3}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -2504,8 +2504,8 @@
     "m_ObjectId": "bf033306d43f422bbda135aaee71a57e",
     "m_Title": "Scroll Effect",
     "m_Position": {
-        "x": -2705.599853515625,
-        "y": 349.6000061035156
+        "x": -2704.999755859375,
+        "y": 350.99993896484377
     }
 }
 
@@ -2955,7 +2955,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"c825d712cad70e84ab074b12b10ac0c8\",\"type\":3}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -3100,7 +3100,7 @@
     "m_StageCapability": 3,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"e9cb0fce59f32704c895846630f26219\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"06a5e74280bebc04f811c3965452d2c6\",\"type\":3}}",
         "m_Guid": ""
     },
     "m_DefaultType": 0
