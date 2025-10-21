@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:CDVEL-Game/Assets/Samples/Visual Effect Graph.meta
 guid: c5d1fa9907347be479efc1611a088084
+========
+guid: 1df6be8683bcb9c45a95a275ba5386e0
+>>>>>>>> HeartShader:CDVEL-Game/Assets/Samples.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
