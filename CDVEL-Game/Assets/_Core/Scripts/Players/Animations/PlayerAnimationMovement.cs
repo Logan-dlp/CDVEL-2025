@@ -12,6 +12,7 @@ namespace Players.Movements
         private void OnEnable()
         {
             _playerMovementInvoker.OnVelocityChange += SetAnimationMovement;
+            _playerMovementInvoker.OnJostled += JostledMovement;
         }
 
         private void Awake()
@@ -22,6 +23,7 @@ namespace Players.Movements
         private void OnDestroy()
         {
             _playerMovementInvoker.OnVelocityChange -= SetAnimationMovement;
+            _playerMovementInvoker.OnJostled -= JostledMovement;
         }
 
         private void SetAnimationMovement(Vector3 velocity, float speed)
@@ -31,8 +33,12 @@ namespace Players.Movements
             else
                 _animator.SetBool("IsJumped", false);
             
-            
             _animator.SetFloat("Velocity", speed);
+        }
+
+        private void JostledMovement()
+        {
+            _animator.SetTrigger("IsJostled");
         }
     }
 }
