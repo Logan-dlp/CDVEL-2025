@@ -232,6 +232,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX_ShatteredHeart
       objectReference: {fileID: 0}
+    - target: {fileID: 8191433386013767552, guid: 998f718d77c28504d83689a95ecb3137,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
