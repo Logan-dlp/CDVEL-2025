@@ -73,7 +73,7 @@ namespace Players.Movements
 
         public void SetDirection(InputAction.CallbackContext ctx)
         {
-            if (_isActiveInput)
+            if (_isActiveInput && Time.timeScale > 0)
             {
                 _velocity = new Vector3(ctx.ReadValue<Vector2>().x, _velocity.y, 0);
 
@@ -90,7 +90,7 @@ namespace Players.Movements
 
         public void ExecuteJump(InputAction.CallbackContext ctx)
         {
-            if (ctx.started)
+            if (ctx.started && Time.timeScale > 0)
             {
                 _isJumped = _isGrounded;
             }
@@ -108,6 +108,9 @@ namespace Players.Movements
 
         private void ExecuteMovement()
         {
+            if (Time.timeScale <= 0)
+                return;
+            
             _velocity.y = gameObject.ApplyGravity(_velocity.y, _gravityDetectionDistance, Physics.gravity.y);
             _isGrounded = gameObject.IsGrounded(_gravityDetectionDistance);
 

@@ -41,6 +41,9 @@ namespace Hearts.Movements
 
         private void ExecuteMovement()
         {
+            if (Time.timeScale <= 0)
+                return;
+            
             _direction.y = gameObject.ApplyGravity(_direction.y, 0, _gravity);
             
             HeartMovementCommand newCommand = new(_controller, _direction, _boundsRestitution);
