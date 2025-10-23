@@ -74,6 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 157671136857124158}
   - component: {fileID: 6111391036981819204}
+  - component: {fileID: 887598854419612968}
   m_Layer: 0
   m_Name: A_Walk
   m_TagString: Skin
@@ -111,7 +112,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 63cb65bbf63d6ff42a051755ebe5dbed, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -119,6 +120,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &887598854419612968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683414358033905540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5085f1d3124d35a918fe0ef269de6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMovementInvoker: {fileID: 7406214436245620963}
 --- !u!1 &774497027863270623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,9 +1018,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b709e9275bd481a93e750934200bc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 4.5
   _acceleration: 15
-  _jumpForce: 2
+  _jumpForce: 1.2
+  _jostledForce: 0.35
   _gravityDetectionDistance: 0.8
 --- !u!1 &8687814250518341330
 GameObject:
