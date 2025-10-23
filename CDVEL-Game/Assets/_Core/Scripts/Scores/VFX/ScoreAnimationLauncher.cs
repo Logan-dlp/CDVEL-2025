@@ -21,6 +21,7 @@ namespace Players.Movements
 
         protected override void PlayFX()
         {
+            _fx.SetTrigger("IsReset");
             _fx.SetTrigger("IsPopIn");
         }
 
