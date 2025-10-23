@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX_ShatteredHeart
       objectReference: {fileID: 0}
+    - target: {fileID: 8191433386013767552, guid: 998f718d77c28504d83689a95ecb3137,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -97,6 +102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Heart Normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947147803150413348, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5393890002059982614, guid: e72a6831bcbaa524f915ffd0f8d8bfae,
         type: 3}
