@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4777643357976829630}
   - component: {fileID: 4070001520047862428}
   - component: {fileID: 4317032843494622418}
+  - component: {fileID: 6173145094468449636}
   m_Layer: 0
   m_Name: VFX_CollisionPlayer
   m_TagString: Untagged
@@ -46,7 +47,7 @@ VisualEffect:
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 0
-  m_AllowInstancing: 1
+  m_AllowInstancing: 0
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
@@ -111,3 +112,16 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6173145094468449636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490811687545948013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d4cf1099014e6484552712e13db1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovementInvoker: {fileID: 0}
