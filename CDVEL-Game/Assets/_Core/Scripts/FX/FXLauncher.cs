@@ -12,6 +12,9 @@ namespace FX
 
         protected virtual void Awake()
         {
+            if (_fx != null)
+                return;
+            
             _fx = GetComponent<T>();
         }
 
