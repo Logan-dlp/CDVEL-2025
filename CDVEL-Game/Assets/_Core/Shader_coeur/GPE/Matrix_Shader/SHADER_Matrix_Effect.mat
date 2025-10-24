@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Matrix_Shad_Effect
+  m_Name: SHADER_Matrix_Effect
   m_Shader: {fileID: -6465566751694194690, guid: faae3374d50ee994797524b2961419ac,
     type: 3}
   m_Parent: {fileID: 0}
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GradiantTexture:
-        m_Texture: {fileID: 2800000, guid: 8cd1486f19eea7840929ad798b6210df, type: 3}
+        m_Texture: {fileID: 2800000, guid: 41dc51d88bc323545a304550bb3dd7ae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -129,14 +129,14 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BumperOulineColor: {r: 0, g: 5.590879, b: 0.5074387, a: 1}
-    - _Color: {r: 0, g: 8, b: 0.008434296, a: 1}
+    - _BumperOulineColor: {r: 0, g: 2.462289, b: 0.223482, a: 1}
+    - _Color: {r: 0, g: 1, b: 0.038576365, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _scrollspeed: {r: 0, g: 0.05, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &624837015010662963
+--- !u!114 &4852716921409558136
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
