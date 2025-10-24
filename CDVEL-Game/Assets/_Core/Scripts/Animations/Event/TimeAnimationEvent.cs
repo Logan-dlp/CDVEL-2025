@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Animations.Event
+namespace Animations
 {
     using Timers;
     

@@ -1,9 +1,8 @@
 using UnityEngine;
 using TMPro;
 
-namespace Players.Movements
+namespace Scores
 {
-    using Scores;
     using FX;
     
     public class ScoreAnimationLauncher : FXLauncher<Animator>

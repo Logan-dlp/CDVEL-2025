@@ -26,5 +26,10 @@ namespace Scores
             OnAddedPoint?.Invoke(transform.position, points);
             OnScoreUpdated?.Invoke(_scoreSystem.Score);
         }
+
+        public int GetScore()
+        {
+            return _scoreSystem.Score;
+        }
     }
 }

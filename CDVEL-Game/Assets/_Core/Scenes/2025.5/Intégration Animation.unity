@@ -1233,7 +1233,6 @@ GameObject:
   m_Component:
   - component: {fileID: 415369675}
   - component: {fileID: 415369677}
-  - component: {fileID: 415369676}
   m_Layer: 5
   m_Name: Timer Finished Text
   m_TagString: Untagged
@@ -1261,19 +1260,6 @@ RectTransform:
   m_AnchoredPosition: {x: -299.99997, y: -199.99998}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &415369676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415369674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8197a6e73a34ca9bb25092ae97dd349, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timerObject: {fileID: 1110258019}
 --- !u!222 &415369677
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1536,6 +1522,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed7a4361aa1c384b81bf749f2a40db2, type: 3}
+--- !u!114 &437940989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3745488262427149964, guid: 9ed7a4361aa1c384b81bf749f2a40db2,
+    type: 3}
+  m_PrefabInstance: {fileID: 437940988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f9ee9150d340959e3f57d1277a9e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458038918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,7 +1950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722f02c870b1443593e4c97ee0e03098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreSystem: {fileID: 620077152}
+  _scoreSystem: {fileID: 1184624618}
   _scoreText: {fileID: 607363739}
 --- !u!114 &607363739
 MonoBehaviour:
@@ -2061,18 +2059,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b709e9275bd481a93e750934200bc23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &620077152 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7972632426031468638, guid: a1ef2032a28ccab44868259a324d8852,
-    type: 3}
-  m_PrefabInstance: {fileID: 1184624617}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09302f61536e4007b7aa7f3dfc74d42a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &629315220
@@ -3562,6 +3548,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ef2032a28ccab44868259a324d8852, type: 3}
+--- !u!114 &1184624618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 815264399889100148, guid: a1ef2032a28ccab44868259a324d8852,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184624617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f9ee9150d340959e3f57d1277a9e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1197682026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3823,7 +3821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722f02c870b1443593e4c97ee0e03098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreSystem: {fileID: 1793260549}
+  _scoreSystem: {fileID: 437940989}
   _scoreText: {fileID: 1426623218}
 --- !u!114 &1426623218
 MonoBehaviour:
@@ -4637,18 +4635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b709e9275bd481a93e750934200bc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1793260549 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6201098174550588326, guid: 9ed7a4361aa1c384b81bf749f2a40db2,
-    type: 3}
-  m_PrefabInstance: {fileID: 437940988}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09302f61536e4007b7aa7f3dfc74d42a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1854384876
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,6 +4645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1854384878}
   - component: {fileID: 1854384877}
+  - component: {fileID: 1854384879}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -4694,6 +4681,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1854384879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854384876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8197a6e73a34ca9bb25092ae97dd349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: ScoresScenes
 --- !u!1 &1936224599
 GameObject:
   m_ObjectHideFlags: 0
