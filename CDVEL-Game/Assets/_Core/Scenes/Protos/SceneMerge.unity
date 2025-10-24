@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8197a6e73a34ca9bb25092ae97dd349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timerObject: {fileID: 1686734069}
+  sceneName: 
 --- !u!1 &708954988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,111 +1824,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7251211255543860565, guid: 5165d3867be454c4ba41df8f51944df6, type: 3}
---- !u!1 &805759801
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 805759805}
-  - component: {fileID: 805759804}
-  - component: {fileID: 805759803}
-  - component: {fileID: 805759802}
-  m_Layer: 6
-  m_Name: Bumper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!65 &805759802
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805759801}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &805759803
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805759801}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &805759804
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805759801}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &805759805
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805759801}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.1826645, w: 0.98317534}
-  m_LocalPosition: {x: 5.37, y: 3.57, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.05}
 --- !u!1 &828427427 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2429684286474756921, guid: 929ed8390b06b524aab427765f19df57,
@@ -2073,6 +1968,11 @@ PrefabInstance:
     - target: {fileID: 142644919167164586, guid: 929ed8390b06b524aab427765f19df57,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283601497546020166, guid: 929ed8390b06b524aab427765f19df57,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 595683866105088993, guid: 929ed8390b06b524aab427765f19df57,
@@ -7630,7 +7530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722f02c870b1443593e4c97ee0e03098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreSystem: {fileID: 1150286134}
+  _scoreSystem: {fileID: 0}
   _scoreText: {fileID: 1128568062}
 --- !u!114 &1128568062
 MonoBehaviour:
@@ -7869,7 +7769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722f02c870b1443593e4c97ee0e03098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreSystem: {fileID: 1843434760}
+  _scoreSystem: {fileID: 0}
   _scoreText: {fileID: 1142747237}
 --- !u!114 &1142747237
 MonoBehaviour:
@@ -8152,18 +8052,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4e40cdb0c830614dad18dae7f766f96, type: 3}
---- !u!114 &1150286134 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4575478801522422358, guid: a4e40cdb0c830614dad18dae7f766f96,
-    type: 3}
-  m_PrefabInstance: {fileID: 1150286133}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09302f61536e4007b7aa7f3dfc74d42a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1150286135 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7406214436245620963, guid: a4e40cdb0c830614dad18dae7f766f96,
@@ -9818,18 +9706,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4e40cdb0c830614dad18dae7f766f96, type: 3}
---- !u!114 &1843434760 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4575478801522422358, guid: a4e40cdb0c830614dad18dae7f766f96,
-    type: 3}
-  m_PrefabInstance: {fileID: 1843434759}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09302f61536e4007b7aa7f3dfc74d42a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1843434761 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7406214436245620963, guid: a4e40cdb0c830614dad18dae7f766f96,
@@ -10317,7 +10193,6 @@ SceneRoots:
   - {fileID: 1843434759}
   - {fileID: 1854983609}
   - {fileID: 182854351}
-  - {fileID: 805759805}
   - {fileID: 155208427}
   - {fileID: 1136541372}
   - {fileID: 911036235}

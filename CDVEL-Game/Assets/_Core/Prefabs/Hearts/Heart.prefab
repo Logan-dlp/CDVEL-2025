@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efcf970103846748a15d4805f026b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gravity: -7.81
+  _gravity: -5.81
   _despawnTime: 2
   _bumperBoundsForce: 1.2
   _jumperLayer:
