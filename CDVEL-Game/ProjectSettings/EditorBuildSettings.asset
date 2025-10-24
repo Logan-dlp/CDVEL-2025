@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Core/Scenes/2025.5/Game.unity
     guid: 17459607fd907274cbcce6f0545d8e99
+  - enabled: 1
+    path: Assets/_Core/Scenes/2025.5/Scores.unity
+    guid: ed22dca8fb7751c468d67a4fccc4ad0f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 101d0a9e55a9f9b4db56ba3ee7bc936b,
       type: 3}
