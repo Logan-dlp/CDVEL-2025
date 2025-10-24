@@ -46,13 +46,17 @@ namespace Hearts
             
             _direction.y = gameObject.ApplyGravity(_direction.y, 0, _gravity);
             
+            Debug.DrawLine(transform.position, _direction, Color.magenta);
+            
             HeartMovementCommand newCommand = new(_controller, _direction, _boundsRestitution);
             ExecuteCommand(newCommand);
         }
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            Vector3 hitNormal = hit.normal.normalized;
+            Debug.DrawLine(hit.point, hit.point + hit.normal, Color.red);
+            
+            Vector3 hitNormal = hit.normal;
             Vector3 velocity = _direction;
 
             bool isJumper = _jumperLayer == (_jumperLayer | (1 << hit.gameObject.layer));
@@ -60,10 +64,7 @@ namespace Hearts
             
             _direction = velocity - (1 + restitution) * Vector3.Dot(velocity, hitNormal) * hitNormal;
             
-            if (hitNormal.y < -0.5f && velocity.y > 0f)
-            {
-                _direction.y = -Mathf.Abs(_direction.y) * (1f + restitution);
-            }
+            Debug.DrawLine(hit.point, _direction, Color.green);
             
             _direction.z = 0;        
         }
