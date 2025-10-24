@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0fabf7af21435cb227ee2e52ef6f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreHandler: {fileID: 4575478801522422358}
+  _scoreHandler: {fileID: 6524380983236906876}
 --- !u!1 &5805235221066497630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 8530766295015774510}
   - component: {fileID: 5492041144895025746}
   - component: {fileID: 8851821354995681625}
-  - component: {fileID: 4575478801522422358}
+  - component: {fileID: 6524380983236906876}
   - component: {fileID: 7406214436245620963}
   m_Layer: 3
   m_Name: Player
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_DefaultActionMap: Game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &4575478801522422358
+--- !u!114 &6524380983236906876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1205,9 +1205,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8579281376148360961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09302f61536e4007b7aa7f3dfc74d42a, type: 3}
+  m_Script: {fileID: 11500000, guid: 54f9ee9150d340959e3f57d1277a9e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerTag: 0
 --- !u!114 &7406214436245620963
 MonoBehaviour:
   m_ObjectHideFlags: 0
