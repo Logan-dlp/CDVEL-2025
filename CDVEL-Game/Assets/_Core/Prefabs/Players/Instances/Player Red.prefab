@@ -33,6 +33,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 10317809
       objectReference: {fileID: 0}
+    - target: {fileID: 6524380983236906876, guid: a4e40cdb0c830614dad18dae7f766f96,
+        type: 3}
+      propertyPath: _playerTag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8579281376148360961, guid: a4e40cdb0c830614dad18dae7f766f96,
         type: 3}
       propertyPath: m_Name

@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/_Core/Scenes/2025.5/Int\xE9gration Animation.unity"
-    guid: 2d53bf82fce386e47b017718acf6b93c
-  - enabled: 1
-    path: Assets/_Core/Scenes/2025.5/ScoresScenes.unity
-    guid: 7c833c2510375f8439fdf892f9ca0f5e
+    path: Assets/_Core/Scenes/2025.5/Game.unity
+    guid: 17459607fd907274cbcce6f0545d8e99
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 101d0a9e55a9f9b4db56ba3ee7bc936b,
       type: 3}
