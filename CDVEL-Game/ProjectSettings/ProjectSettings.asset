@@ -140,7 +140,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 2025.4.74
+  bundleVersion: 2025.5.207
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 101d0a9e55a9f9b4db56ba3ee7bc936b, type: 3}
   metroInputSource: 0
@@ -844,7 +844,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: CDVEL-Game
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -852,7 +852,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: CDVEL-Game
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: CDVEL-Game
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

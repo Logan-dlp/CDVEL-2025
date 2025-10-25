@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using System;
 
@@ -8,12 +9,26 @@ namespace Hearts
     public class HeartBehaviour : MonoBehaviour
     {
         public event Action OnTransmittedPoint;
-
+        
         [SerializeField] private LayerMask _unspawnLayer;
-        
+        [SerializeField] private float _timeToMove;
         [SerializeField] private int _points;
-        private bool _enableCollider = true;
         
+        private bool _enableCollider = true;
+
+        private void OnEnable()
+        {
+            var movementInvoker = GetComponent<HeartMovementInvoker>();
+            movementInvoker.enabled = false; 
+            IEnumerator EnableMovement(float timeToEnable)
+            {
+                yield return new WaitForSeconds(timeToEnable);
+                movementInvoker.enabled = true;
+            }
+
+            StartCoroutine(EnableMovement(_timeToMove));
+        }
+
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
             if (_enableCollider)

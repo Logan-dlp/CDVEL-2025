@@ -20,11 +20,13 @@ namespace Timers
         {
             _timer = timer;
             _currentTimer = _timer;
+            Time.timeScale = 0;
         }
         
         public void StartTimer()
         {
             _isRunning = true;
+            Time.timeScale = 1;
         }
 
         public void UpdateTimer()
@@ -45,6 +47,7 @@ namespace Timers
         public void StopTimer()
         {
             _isRunning = false;
+            Time.timeScale = 0;
         }
 
         public void ResetTimer()

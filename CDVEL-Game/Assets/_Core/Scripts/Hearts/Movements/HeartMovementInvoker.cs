@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Hearts.Movements
+namespace Hearts
 {
     using Extensions;
     using Commands;
@@ -10,11 +10,12 @@ namespace Hearts.Movements
     {
         private const float _boundsRestitution = .8f;
 
+        [SerializeField] private float _gravity = -9.81f;
         [SerializeField] private float _despawnTime;
         [SerializeField] private float _bumperBoundsForce;
         [SerializeField] private LayerMask _jumperLayer;
 
-        private float _timerToDespawn = 0;
+        private float _timerToDespawn;
         private Vector3 _direction;
         private CharacterController _controller;
 
@@ -40,7 +41,10 @@ namespace Hearts.Movements
 
         private void ExecuteMovement()
         {
-            _direction.y = gameObject.ApplyGravity(_direction.y, 0);
+            if (Time.timeScale <= 0)
+                return;
+            
+            _direction.y = gameObject.ApplyGravity(_direction.y, 0, _gravity);
             
             HeartMovementCommand newCommand = new(_controller, _direction, _boundsRestitution);
             ExecuteCommand(newCommand);
@@ -50,17 +54,13 @@ namespace Hearts.Movements
         {
             Vector3 hitNormal = hit.normal;
             Vector3 velocity = _direction;
+
+            bool isJumper = _jumperLayer == (_jumperLayer | (1 << hit.gameObject.layer));
+            float restitution = isJumper ? _bumperBoundsForce : _boundsRestitution;
             
-            if (_jumperLayer == (_jumperLayer | (1 << hit.gameObject.layer)))
-            {
-                _direction = velocity - (1 + _bumperBoundsForce) * Vector3.Dot(velocity, hitNormal) * hitNormal;
-                _direction.z = 0;
+            _direction = velocity - (1 + restitution) * Vector3.Dot(velocity, hitNormal) * hitNormal;
             
-                return;
-            }
-            
-            _direction = velocity - (1 + _boundsRestitution) * Vector3.Dot(velocity, hitNormal) * hitNormal;
-            _direction.z = 0;
+            _direction.z = 0;        
         }
     }
 }

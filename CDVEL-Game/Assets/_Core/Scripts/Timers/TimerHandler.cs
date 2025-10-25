@@ -42,7 +42,7 @@ namespace Timers
             _timerSystem.UpdateTimer();
         }
         
-        public void OnDestroy()
+        private void OnDestroy()
         {
             OnStartedTimer -= _timerSystem.StartTimer;
             OnStoppedTimer -= _timerSystem.StopTimer;
