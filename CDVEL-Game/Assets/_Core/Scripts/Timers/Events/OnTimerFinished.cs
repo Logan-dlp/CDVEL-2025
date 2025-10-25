@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Timers
 {
-    using Players;
     using SceneLoader;
+    using Players;
     
     public class OnTimerFinished : MonoBehaviour
     {
@@ -28,7 +28,7 @@ namespace Timers
             }
             
             SaveScore();
-            SceneLoaderHandler.Instance.OnLoadScene?.Invoke(sceneName);
+            SceneLoaderHandler.Instance.LoadScene(sceneName);
         }
     }
 }

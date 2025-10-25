@@ -46,16 +46,12 @@ namespace Hearts
             
             _direction.y = gameObject.ApplyGravity(_direction.y, 0, _gravity);
             
-            Debug.DrawLine(transform.position, _direction, Color.magenta);
-            
             HeartMovementCommand newCommand = new(_controller, _direction, _boundsRestitution);
             ExecuteCommand(newCommand);
         }
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            Debug.DrawLine(hit.point, hit.point + hit.normal, Color.red);
-            
             Vector3 hitNormal = hit.normal;
             Vector3 velocity = _direction;
 
@@ -63,8 +59,6 @@ namespace Hearts
             float restitution = isJumper ? _bumperBoundsForce : _boundsRestitution;
             
             _direction = velocity - (1 + restitution) * Vector3.Dot(velocity, hitNormal) * hitNormal;
-            
-            Debug.DrawLine(hit.point, _direction, Color.green);
             
             _direction.z = 0;        
         }
