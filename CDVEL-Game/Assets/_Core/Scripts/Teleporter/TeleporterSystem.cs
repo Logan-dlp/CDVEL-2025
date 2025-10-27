@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using System;
 
 namespace Teleporter
 {
     public class TeleporterSystem : ITeleporterSystem
     {
+        public event Action OnTeleporterEnter;
+        
         private Transform _arrivedTransform;
         public Transform ArrivedTransform => _arrivedTransform;
 
@@ -14,6 +17,8 @@ namespace Teleporter
 
         public void Teleport(GameObject gameObject)
         {
+            OnTeleporterEnter?.Invoke();
+            
             if (gameObject.TryGetComponent(out CharacterController controller))
             {
                 controller.enabled = false;
