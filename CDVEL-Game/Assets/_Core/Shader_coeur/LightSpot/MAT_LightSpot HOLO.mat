@@ -112,6 +112,7 @@ Material:
     - _Fade_Intensity: 0.09
     - _Float: 5.49
     - _Fresnel_Intensity: 1
+    - _Globalopacity: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
