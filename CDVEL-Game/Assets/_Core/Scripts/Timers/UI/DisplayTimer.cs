@@ -26,9 +26,8 @@ namespace Timers
         {
             float minutes = Mathf.FloorToInt(_currentTimer / 60);
             float seconds = Mathf.FloorToInt(_currentTimer % 60);
-            float milliseconds = _currentTimer % 1 * 1000;
             
-            _timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+            _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
     }
 }

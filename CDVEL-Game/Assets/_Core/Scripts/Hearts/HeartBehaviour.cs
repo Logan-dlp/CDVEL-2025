@@ -1,5 +1,4 @@
 using System.Collections;
-using Hearts.Movements;
 using UnityEngine;
 using System;
 
@@ -10,6 +9,7 @@ namespace Hearts
     public class HeartBehaviour : MonoBehaviour
     {
         public event Action OnTransmittedPoint;
+        public event Action OnUndoBehaviour;
         
         [SerializeField] private LayerMask _unspawnLayer;
         [SerializeField] private float _timeToMove;
@@ -45,6 +45,7 @@ namespace Hearts
                 if (_unspawnLayer == (_unspawnLayer | (1 << hit.gameObject.layer)))
                 {
                     _enableCollider = false;
+                    OnUndoBehaviour?.Invoke();
                     Destroy(gameObject);
                 }
             }

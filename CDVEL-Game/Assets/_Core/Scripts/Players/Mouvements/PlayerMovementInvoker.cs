@@ -2,7 +2,7 @@
 using UnityEngine;
 using System;
 
-namespace Players.Movements
+namespace Players
 {
     using Extensions;
     using Commands;

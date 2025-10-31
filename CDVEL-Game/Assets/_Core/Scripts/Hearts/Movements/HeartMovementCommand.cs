@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Hearts.Movements
+namespace Hearts
 {
     using Commands;
     

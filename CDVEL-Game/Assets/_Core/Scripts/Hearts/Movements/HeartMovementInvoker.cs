@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Hearts.Movements
+namespace Hearts
 {
     using Extensions;
     using Commands;
@@ -54,17 +54,13 @@ namespace Hearts.Movements
         {
             Vector3 hitNormal = hit.normal;
             Vector3 velocity = _direction;
+
+            bool isJumper = _jumperLayer == (_jumperLayer | (1 << hit.gameObject.layer));
+            float restitution = isJumper ? _bumperBoundsForce : _boundsRestitution;
             
-            if (_jumperLayer == (_jumperLayer | (1 << hit.gameObject.layer)))
-            {
-                _direction = velocity - (1 + _bumperBoundsForce) * Vector3.Dot(velocity, hitNormal) * hitNormal;
-                _direction.z = 0;
+            _direction = velocity - (1 + restitution) * Vector3.Dot(velocity, hitNormal) * hitNormal;
             
-                return;
-            }
-            
-            _direction = velocity - (1 + _boundsRestitution) * Vector3.Dot(velocity, hitNormal) * hitNormal;
-            _direction.z = 0;
+            _direction.z = 0;        
         }
     }
 }

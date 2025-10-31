@@ -4,11 +4,18 @@ namespace Extensions
 {
     public static class PhysicsExtension
     {
-        public static float ApplyGravity(this GameObject gameObject, float currentGravity, float distance, float gravity)
+        public static float ApplyGravity(this GameObject gameObject, float currentGravity, float distance, float gravity, float maxFallSpeed = -10f)
         {
-            return Physics.Raycast(gameObject.transform.position, -gameObject.transform.up, out RaycastHit hit, distance)
-                   && hit.transform != gameObject.transform
-                ? 0 : currentGravity + gravity * Time.fixedDeltaTime;
+            Transform t = gameObject.transform;
+
+            bool isGrounded = Physics.Raycast(t.position, -t.up, out RaycastHit hit, distance)
+                              && hit.transform != gameObject.transform;
+
+            if (isGrounded)
+                return 0f;
+            
+            currentGravity += gravity * Time.fixedDeltaTime;
+            return Mathf.Max(currentGravity, maxFallSpeed);
         }
 
         public static bool IsGrounded(this GameObject gameObject, float distance)

@@ -1,20 +1,34 @@
 using UnityEngine;
 
-namespace Timers.Events
+namespace Timers
 {
+    using SceneLoader;
+    using Players;
+    
     public class OnTimerFinished : MonoBehaviour
     {
-        [SerializeField] private GameObject _timerObject;
-
-        private void Start()
+        [SerializeField] string sceneName;
+        
+        private void Awake()
         {
-            _timerObject.SetActive(false);
             TimerHandler.Instance.OnTimerFinished += OnTimerFinish;
         }
 
         private void OnTimerFinish()
         {
-            _timerObject.SetActive(true);
+            void SaveScore()
+            {
+                var allScoreArray = FindObjectsByType<PlayerScoreHandler>(FindObjectsSortMode.None);
+
+                foreach (PlayerScoreHandler playerScoreHandler in allScoreArray)
+                {
+                    PlayerPrefs.SetInt(playerScoreHandler.PlayerTag.ToString(), playerScoreHandler.GetScore());
+                }
+                
+            }
+            
+            SaveScore();
+            SceneLoaderHandler.Instance.LoadScene(sceneName);
         }
     }
 }

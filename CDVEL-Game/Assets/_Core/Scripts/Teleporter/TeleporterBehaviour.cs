@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using System;
 
 namespace Teleporter
 {
     [RequireComponent(typeof(Collider))]
     public class TeleporterBehaviour : MonoBehaviour
     {
+        public event Action OnTeleporterEnter;
+        
         [SerializeField] private LayerMask _teleportableMask;
         
         private Transform _arrivedTransform;
@@ -21,6 +24,7 @@ namespace Teleporter
             _arrivedTransform = transform.GetChild(0);
 
             _teleporterSystem = new TeleporterSystem(_arrivedTransform);
+            _teleporterSystem.OnTeleporterEnter += () => OnTeleporterEnter?.Invoke();
         }
 
         private void OnTriggerEnter(Collider collision)
