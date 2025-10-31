@@ -16,3 +16,4 @@ MonoBehaviour:
   _volume: 1
   _minPitch: 0.9
   _maxPitch: 1.5
+  _audioType: 0
