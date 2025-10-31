@@ -8,5 +8,10 @@ namespace Audio
         {
             AudioHandler.Instance.PlaySound(_fx);
         }
+
+        protected void StopSFX()
+        {
+            AudioHandler.Instance.StopSound();
+        }
     }
 }
