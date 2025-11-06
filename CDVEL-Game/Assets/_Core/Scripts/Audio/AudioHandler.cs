@@ -3,29 +3,34 @@ using UnityEngine;
 
 namespace Audio
 {
-    [RequireComponent(typeof(AudioSource))]
     public class AudioHandler : MonoSingleton<AudioHandler>
     {
-        private AudioSource _audioSource;
+        [SerializeField] private AudioSource _environmentSource;
+        [SerializeField] private AudioSource _sfxSource;
 
         private IAudioSystem _audioSystem;
 
         protected override void Awake()
         {
             base.Awake();
-            _audioSource = GetComponent<AudioSource>();
-
             _audioSystem = new AudioSystem();
         }
 
         public void PlaySound(SoundData data)
         {
-            _audioSystem.Play(data, _audioSource);
+            if(data.AudioType == AudioType.SFX)
+            {
+                _audioSystem.Play(data, _sfxSource);
+            }
+            else if(data.AudioType == AudioType.Environment)
+            {
+                _audioSystem.Play(data, _environmentSource);
+            }                
         }
 
         public void StopSound()
         {
-            _audioSystem.Stop(_audioSource);
+            _audioSystem.Stop(_environmentSource);
         }
     }
 }
