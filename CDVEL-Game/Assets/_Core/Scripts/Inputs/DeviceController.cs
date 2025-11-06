@@ -1,11 +1,13 @@
+using UnityEngine.InputSystem.Utilities;
 using UnityEngine.InputSystem;
 using UnityEngine;
-using UnityEngine.InputSystem.Utilities;
 
 namespace Inputs
 {
     public class DeviceController : MonoBehaviour
     {
+        private const int MIN_DEVICES = 2;
+        
         private void Awake()
         {
             SetPlayerDevice();
@@ -15,6 +17,9 @@ namespace Inputs
         {
             var playerArray = FindObjectsByType<PlayerInput>(FindObjectsSortMode.None);
             ReadOnlyArray<Gamepad> devices = Gamepad.all;
+
+            if (devices.Count < MIN_DEVICES)
+                Debug.LogError("There aren't enough controllers !");
 
             for (int i = 0; i < playerArray.Length; i++)
             {
