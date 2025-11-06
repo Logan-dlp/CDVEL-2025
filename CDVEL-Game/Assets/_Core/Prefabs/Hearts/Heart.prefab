@@ -97,6 +97,10 @@ GameObject:
   - component: {fileID: 3715551795010551623}
   - component: {fileID: 5640435467185006155}
   - component: {fileID: 3195666963116897011}
+  - component: {fileID: 2694738912606852950}
+  - component: {fileID: 8874998060334058591}
+  - component: {fileID: 3786729441629185877}
+  - component: {fileID: 6293107276409953702}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -233,6 +237,63 @@ MonoBehaviour:
     m_Bits: 128
   _timeToMove: 0.5
   _points: 0
+--- !u!114 &2694738912606852950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947147803150413348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3898b7f806e97c541bad1a40926bd807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heartBehaviour: {fileID: 3195666963116897011}
+  _pickupHeartSound: {fileID: 11400000, guid: 30de2fdf5b709e44990bcd27054f2e89, type: 2}
+--- !u!114 &8874998060334058591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947147803150413348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f870cd51b240f4a93144fbf3e16fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heartMovementInvoker: {fileID: 5640435467185006155}
+  _bumperSound: {fileID: 11400000, guid: ff508195a71022e49827aeb0eb0b4976, type: 2}
+--- !u!114 &3786729441629185877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947147803150413348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eadaf1bdc1a1f7147a510e7aecd0071a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartBehaviour: {fileID: 3195666963116897011}
+  undoSound: {fileID: 11400000, guid: af9c4ed332286b040869ac409fdfe63e, type: 2}
+--- !u!114 &6293107276409953702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947147803150413348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5c95d312b9c2b428a0c3ab02328ccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heartBehaviour: {fileID: 3195666963116897011}
+  _NegativeHeartSound: {fileID: 11400000, guid: fb47faf41f71af64fa1c660808d23260,
+    type: 2}
 --- !u!1001 &389551601938482524
 PrefabInstance:
   m_ObjectHideFlags: 0

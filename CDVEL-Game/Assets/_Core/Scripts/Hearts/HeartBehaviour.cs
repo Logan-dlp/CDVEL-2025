@@ -9,6 +9,7 @@ namespace Hearts
     public class HeartBehaviour : MonoBehaviour
     {
         public event Action OnTransmittedPoint;
+        public event Action OnNegativePoints;
         public event Action OnUndoBehaviour;
         
         [SerializeField] private LayerMask _unspawnLayer;
@@ -38,7 +39,14 @@ namespace Hearts
                 {
                     _enableCollider = false;
                     scoreHandler.OnAddedPoints(_points);
-                    OnTransmittedPoint?.Invoke();
+                    if(_points > 0)
+                    {
+                        OnTransmittedPoint?.Invoke();
+                    }
+                    else
+                    {
+                        OnNegativePoints?.Invoke();
+                    }
                     Destroy(gameObject);
                 }
 
