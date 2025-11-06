@@ -6,7 +6,9 @@ namespace Timers
     {
         public event Action OnTimerFinished;
         public event Action<float> OnTimerUpdate;
-        
+        public event Action OnFinalCountdownLauch;
+
+
         public float CurrentTimer { get; }
         public float Timer { get; }
         
