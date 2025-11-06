@@ -39,9 +39,7 @@ namespace Spawner
 
         public void ResetParameter()
         {
-            _prefab = _saverSpawnInCollision2D.Prefabs;
-            _minSpawnRate = _saverSpawnInCollision2D.MinSpawnRate;
-            _maxSpawnRate = _saverSpawnInCollision2D.MaxSpawnRate;
+            ChangeParameter(_saverSpawnInCollision2D.Prefabs.ToArray(), _saverSpawnInCollision2D.MinSpawnRate, _saverSpawnInCollision2D.MaxSpawnRate);
         }
 
         public void Spawn()

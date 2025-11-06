@@ -16,9 +16,15 @@ namespace Spawner
 
         public SaverSpawnInCollision2D(List<GameObject> prefab, float minSpawnRate, float maxSpawnRate)
         {
-            this._prefabs = prefab;
-            this._minSpawnRate = minSpawnRate;
-            this._maxSpawnRate = maxSpawnRate;
+            _prefabs = new List<GameObject>();
+
+            foreach (GameObject prefabIterator in prefab)
+            {
+                _prefabs.Add(prefabIterator);
+            }
+            
+            _minSpawnRate = minSpawnRate;
+            _maxSpawnRate = maxSpawnRate;
         }
     }
 }
