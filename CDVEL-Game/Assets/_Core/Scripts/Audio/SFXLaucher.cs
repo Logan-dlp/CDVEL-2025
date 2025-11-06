@@ -2,7 +2,7 @@ using FX;
 
 namespace Audio
 {
-    public abstract class SFXLauncher : FXLauncher<SoundData>
+    public abstract class SFXLauncher : FXLauncherAsset<SoundData>
     {
         protected override void PlayFX()
         {
