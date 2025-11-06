@@ -6,11 +6,10 @@ namespace Audio
     {
         public void Play(SoundData data, AudioSource audioSource)
         {
-            audioSource.pitch = Random.Range(data.MinPitch, data.MaxPitch);
-
             switch (data.AudioType)
             {
                 case AudioType.SFX:
+                    audioSource.pitch = Random.Range(data.MinPitch, data.MaxPitch);
                     audioSource.PlayOneShot(data.Clip, data.Volume);
                     break;
 
