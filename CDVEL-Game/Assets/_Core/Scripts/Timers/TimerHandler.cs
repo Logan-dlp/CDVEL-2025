@@ -11,6 +11,7 @@ namespace Timers
         public event Action OnStoppedTimer;
         public event Action OnResetTimer;
         public event Action OnTimerFinished;
+        public event Action OnFinalCountdownLauch;
         
         public event Action<float> OnTimerUpdate; 
         
@@ -29,6 +30,7 @@ namespace Timers
             OnResetTimer += _timerSystem.ResetTimer;
 
             _timerSystem.OnTimerFinished += () => OnTimerFinished?.Invoke();
+            _timerSystem.OnFinalCountdownLauch += () => OnFinalCountdownLauch?.Invoke();
             _timerSystem.OnTimerUpdate += (timer) => OnTimerUpdate?.Invoke(timer);
         }
 

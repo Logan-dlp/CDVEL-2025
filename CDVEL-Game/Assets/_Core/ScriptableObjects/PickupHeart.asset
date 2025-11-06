@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c959d785c03d046b2122ac5bd2b3b0, type: 3}
   m_Name: PickupHeart
   m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: bc7a6313d85d115448db183a56a808d7, type: 3}
+  _clip: {fileID: 8300000, guid: a34796dde72250649b8ed256095f7091, type: 3}
   _volume: 1
   _minPitch: 0.9
   _maxPitch: 1.5
