@@ -474,6 +474,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 319426032}
   - {fileID: 649243015}
   - {fileID: 1549836733}
   - {fileID: 1531937753}
@@ -1319,7 +1320,7 @@ GameObject:
   - component: {fileID: 319426030}
   - component: {fileID: 319426029}
   m_Layer: 5
-  m_Name: SlidersCanvas
+  m_Name: Sliders Viewer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1403,7 +1404,7 @@ RectTransform:
   - {fileID: 528866092}
   - {fileID: 606375749}
   - {fileID: 375886885}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 124895533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12298,7 +12299,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 319426032}
   - {fileID: 1196927580}
   - {fileID: 124895533}
   - {fileID: 1776799893}
