@@ -16,6 +16,7 @@ namespace Timers
         public event Action<float> OnTimerUpdate; 
         
         [SerializeField] private float _timer;
+        public float MaxTimer => _timer;
         
         private ITimerSystem _timerSystem;
 
@@ -46,6 +47,9 @@ namespace Timers
         
         private void OnDestroy()
         {
+            if (_timerSystem == null)
+                return;
+            
             OnStartedTimer -= _timerSystem.StartTimer;
             OnStoppedTimer -= _timerSystem.StopTimer;
             OnResetTimer -= _timerSystem.ResetTimer;
