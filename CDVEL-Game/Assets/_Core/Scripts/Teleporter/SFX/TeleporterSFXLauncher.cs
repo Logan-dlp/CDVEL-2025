@@ -13,7 +13,6 @@ public class TeleporterSFXLauncher : SFXLauncher
         if (_fx == null) _fx = _teleporterSound;
         if (_teleporterBehaviour != null)
             _teleporterBehaviour.OnTeleporterEnter += PlayFX;
-        Debug.Log("Teleport");
     }
 
     private void OnDestroy()
