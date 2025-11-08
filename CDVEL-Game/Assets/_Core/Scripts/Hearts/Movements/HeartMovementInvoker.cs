@@ -1,3 +1,4 @@
+using FX;
 using UnityEngine;
 
 namespace Hearts
@@ -55,6 +56,11 @@ namespace Hearts
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
+            if (hit.transform.TryGetComponent(out ColorPulser colorPulser))
+            {
+                colorPulser.StartPulsing();
+            }
+            
             Vector3 hitNormal = hit.normal;
             Vector3 velocity = _direction;
 
