@@ -5,6 +5,7 @@ using System;
 namespace Hearts
 {
     using Scores;
+    using FX;
     
     public class HeartBehaviour : MonoBehaviour
     {
@@ -35,6 +36,11 @@ namespace Hearts
         {
             if (_enableCollider)
             {
+                if (hit.transform.TryGetComponent(out ColorPulser colorPulser))
+                {
+                    colorPulser.StartPulsing();
+                }
+                
                 if (hit.transform.TryGetComponent<ScoreHandler>(out var scoreHandler))
                 {
                     _enableCollider = false;
