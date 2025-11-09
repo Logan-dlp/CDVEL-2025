@@ -1505,7 +1505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulseGameObject: {fileID: 229144314}
-  _pulseMultiplier: 5
+  _pulseMultiplier: 1.85
   _pulseSpeed: 4
   _pulseCount: 0.5
 --- !u!1001 &300616594
@@ -2485,7 +2485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulseGameObject: {fileID: 229144312}
-  _pulseMultiplier: 5
+  _pulseMultiplier: 1.85
   _pulseSpeed: 4
   _pulseCount: 0.5
 --- !u!114 &457733457
@@ -9918,7 +9918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulseGameObject: {fileID: 229144308}
-  _pulseMultiplier: 5
+  _pulseMultiplier: 1.85
   _pulseSpeed: 4
   _pulseCount: 0.5
 --- !u!1 &1106323942 stripped
@@ -9960,7 +9960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulseGameObject: {fileID: 229144320}
-  _pulseMultiplier: 5
+  _pulseMultiplier: 1.85
   _pulseSpeed: 4
   _pulseCount: 0.5
 --- !u!1 &1126241472
@@ -10373,7 +10373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulseGameObject: {fileID: 229144322}
-  _pulseMultiplier: 5
+  _pulseMultiplier: 1.85
   _pulseSpeed: 4
   _pulseCount: 0.5
 --- !u!1001 &1282918587
@@ -10738,7 +10738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulseGameObject: {fileID: 229144310}
-  _pulseMultiplier: 5
+  _pulseMultiplier: 1.85
   _pulseSpeed: 4
   _pulseCount: 0.5
 --- !u!1 &1424448021
@@ -11303,7 +11303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulseGameObject: {fileID: 229144318}
-  _pulseMultiplier: 5
+  _pulseMultiplier: 1.85
   _pulseSpeed: 4
   _pulseCount: 0.5
 --- !u!1 &1490162460
@@ -11395,7 +11395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulseGameObject: {fileID: 229144324}
-  _pulseMultiplier: 5
+  _pulseMultiplier: 1.85
   _pulseSpeed: 4
   _pulseCount: 0.5
 --- !u!1 &1525222252
@@ -12729,7 +12729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulseGameObject: {fileID: 229144316}
-  _pulseMultiplier: 5
+  _pulseMultiplier: 1.85
   _pulseSpeed: 4
   _pulseCount: 0.5
 --- !u!1 &1776799892
