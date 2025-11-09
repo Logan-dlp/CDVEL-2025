@@ -1,4 +1,3 @@
-using FX;
 using UnityEngine;
 
 namespace Hearts

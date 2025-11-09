@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,6 +7,7 @@ namespace FX
     {
         private const string COLOR_PROPERTY = "_BumperOulineColor";
 
+        [SerializeField] private GameObject _pulseGameObject;
         [SerializeField] private float _pulseMultiplier;
         [SerializeField] private float _pulseSpeed;
         [SerializeField] private float _pulseCount;
@@ -17,7 +17,8 @@ namespace FX
 
         private void Awake()
         {
-            _materialInstance = GetComponent<Renderer>().material;
+            _materialInstance = _pulseGameObject == null ? GetComponent<Renderer>().material : _pulseGameObject.GetComponent<Renderer>().material;
+
             _pulseColor = _materialInstance.GetColor(COLOR_PROPERTY);
         }
 
