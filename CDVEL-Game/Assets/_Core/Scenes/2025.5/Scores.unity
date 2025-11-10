@@ -9389,6 +9389,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1397502321}
     m_Modifications:
+    - target: {fileID: 154105342190799579, guid: 1a474b89be84ebb498d78c225d2c6107,
+        type: 3}
+      propertyPath: _scoreEntryPrefab
+      value: 
+      objectReference: {fileID: 864838915888229697, guid: 872b1a31215473d48ac52e9aacff7e80,
+        type: 3}
     - target: {fileID: 782392090958790990, guid: 1a474b89be84ebb498d78c225d2c6107,
         type: 3}
       propertyPath: m_SizeDelta.y

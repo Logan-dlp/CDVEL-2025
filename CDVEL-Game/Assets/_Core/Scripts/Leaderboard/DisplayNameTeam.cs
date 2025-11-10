@@ -9,8 +9,10 @@ public class DisplayNameTeam : MonoBehaviour
     public bool IsInputActive { get; private set; }
     public string PlayerName => _currentName;
 
+    [SerializeField, Tooltip("Nombre maximum de caractères que le joueur peut entrer")]
+    private int _maxCharacters = 10;
+
     private string _currentName = "";
-    private const int _maxCharacters = 10;
 
     private void Update()
     {
