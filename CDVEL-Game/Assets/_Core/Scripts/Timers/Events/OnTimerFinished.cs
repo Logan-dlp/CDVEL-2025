@@ -8,7 +8,8 @@ namespace Timers
     public class OnTimerFinished : MonoBehaviour
     {
         [SerializeField] string sceneName;
-        
+        [SerializeField] private SaveTotalScore saveTotalScore;
+
         private void Awake()
         {
             TimerHandler.Instance.OnTimerFinished += OnTimerFinish;
@@ -26,7 +27,8 @@ namespace Timers
                 }
                 
             }
-            
+
+            saveTotalScore.SaveScoreTotal();
             SaveScore();
             SceneLoaderHandler.Instance.LoadScene(sceneName);
         }
