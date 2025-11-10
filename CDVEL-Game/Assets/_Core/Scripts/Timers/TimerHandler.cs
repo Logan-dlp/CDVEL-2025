@@ -47,6 +47,11 @@ namespace Timers
         private void Update()
         {
             _timerSystem.UpdateTimer();
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                SceneLoad();
+            }
         }
 
         private void OnDestroy()
