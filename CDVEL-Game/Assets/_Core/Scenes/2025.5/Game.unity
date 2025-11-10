@@ -10656,7 +10656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f754fc84432175e43b5c567f3ca0bc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreSO: {fileID: 11400000, guid: 00f9a1481bca21e44b0b6cff139180c9, type: 2}
+  _scoreScriptable: {fileID: 11400000, guid: 00f9a1481bca21e44b0b6cff139180c9, type: 2}
 --- !u!4 &1343143578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2326601811531983579, guid: a1f6c9d4b58efac4089383d45b5c4db9,
