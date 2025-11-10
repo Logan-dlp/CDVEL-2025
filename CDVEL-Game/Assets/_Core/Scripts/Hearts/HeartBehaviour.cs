@@ -5,10 +5,13 @@ using System;
 namespace Hearts
 {
     using Scores;
+    using FX;
     
     public class HeartBehaviour : MonoBehaviour
     {
         public event Action OnTransmittedPoint;
+        public event Action OnNegativePoints;
+        public event Action OnUndoBehaviour;
         
         [SerializeField] private LayerMask _unspawnLayer;
         [SerializeField] private float _timeToMove;
@@ -33,17 +36,30 @@ namespace Hearts
         {
             if (_enableCollider)
             {
+                if (hit.transform.TryGetComponent(out ColorPulser colorPulser))
+                {
+                    colorPulser.StartPulsing();
+                }
+                
                 if (hit.transform.TryGetComponent<ScoreHandler>(out var scoreHandler))
                 {
                     _enableCollider = false;
                     scoreHandler.OnAddedPoints(_points);
-                    OnTransmittedPoint?.Invoke();
+                    if(_points > 0)
+                    {
+                        OnTransmittedPoint?.Invoke();
+                    }
+                    else
+                    {
+                        OnNegativePoints?.Invoke();
+                    }
                     Destroy(gameObject);
                 }
 
                 if (_unspawnLayer == (_unspawnLayer | (1 << hit.gameObject.layer)))
                 {
                     _enableCollider = false;
+                    OnUndoBehaviour?.Invoke();
                     Destroy(gameObject);
                 }
             }

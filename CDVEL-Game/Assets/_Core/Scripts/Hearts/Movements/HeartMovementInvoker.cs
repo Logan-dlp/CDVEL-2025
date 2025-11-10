@@ -4,10 +4,13 @@ namespace Hearts
 {
     using Extensions;
     using Commands;
-    
+    using System;
+
     [RequireComponent(typeof(CharacterController), typeof(Collider))]
     public class HeartMovementInvoker : CommandInvoker
     {
+        public event Action OnBumperBounced;
+
         private const float _boundsRestitution = .8f;
 
         [SerializeField] private float _gravity = -9.81f;
@@ -57,7 +60,12 @@ namespace Hearts
 
             bool isJumper = _jumperLayer == (_jumperLayer | (1 << hit.gameObject.layer));
             float restitution = isJumper ? _bumperBoundsForce : _boundsRestitution;
-            
+
+            if (isJumper)
+            {
+                OnBumperBounced?.Invoke();
+            }
+
             _direction = velocity - (1 + restitution) * Vector3.Dot(velocity, hitNormal) * hitNormal;
             
             _direction.z = 0;        

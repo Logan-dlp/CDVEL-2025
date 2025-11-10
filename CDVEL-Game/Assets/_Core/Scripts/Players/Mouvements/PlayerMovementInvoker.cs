@@ -77,7 +77,7 @@ namespace Players
             {
                 _velocity = new Vector3(ctx.ReadValue<Vector2>().x, _velocity.y, 0);
 
-                if (Mathf.Abs(_velocity.x) >= .75f)
+                if (Mathf.Abs(_velocity.x) >= .15f)
                 {
                     int direction = (int)Mathf.Sign(_velocity.x);
                     _skin.rotation = Quaternion.Euler(0, _skinRotationOffset + (90 * direction), 0);

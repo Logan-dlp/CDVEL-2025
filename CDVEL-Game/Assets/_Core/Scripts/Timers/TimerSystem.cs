@@ -7,7 +7,8 @@ namespace Timers
     {
         public event Action OnTimerFinished;
         public event Action<float> OnTimerUpdate;
-        
+        public event Action OnFinalCountdownLauch;
+
         private float _currentTimer;
         public float CurrentTimer => _currentTimer;
 
@@ -34,7 +35,11 @@ namespace Timers
             if (_isRunning)
             {
                 _currentTimer -= Time.deltaTime;
-                if (_currentTimer <= 0)
+                if(_currentTimer == 10)
+                {
+                    OnFinalCountdownLauch?.Invoke();
+                }
+                else if (_currentTimer <= 0)
                 {
                     _currentTimer = 0;
                     StopTimer();
