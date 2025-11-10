@@ -3225,6 +3225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52c9aaecffd4567bfe894bf82b8cd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneName: Scores
+  saveTotalScore: {fileID: 1328825029}
   _timer: 180
 --- !u!4 &651051368
 Transform:
@@ -3254,6 +3256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Scores
+  saveTotalScore: {fileID: 1328825029}
 --- !u!114 &651051370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10609,6 +10612,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1328825027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1328825028}
+  - component: {fileID: 1328825029}
+  m_Layer: 0
+  m_Name: SaveScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1328825028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328825027}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1101.3204, y: 562.5692, z: -6.769266}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1328825029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328825027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f754fc84432175e43b5c567f3ca0bc7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreScriptable: {fileID: 11400000, guid: 00f9a1481bca21e44b0b6cff139180c9, type: 2}
 --- !u!4 &1343143578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2326601811531983579, guid: a1f6c9d4b58efac4089383d45b5c4db9,
@@ -13768,3 +13816,4 @@ SceneRoots:
   - {fileID: 1437737380}
   - {fileID: 1700455915}
   - {fileID: 1590238975}
+  - {fileID: 1328825028}

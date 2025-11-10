@@ -1,4 +1,5 @@
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 namespace SceneLoader
 {
@@ -6,6 +7,8 @@ namespace SceneLoader
     {
         public void LoadScene(string sceneName)
         {
+            Time.timeScale = 1;
+            Debug.Log(Time.timeScale);
             SceneManager.LoadScene(sceneName);
         }
     }
