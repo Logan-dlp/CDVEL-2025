@@ -1923,7 +1923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attrappez le bon coeur
+  m_text: Attrapez les bons coeurs
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37f74c55a1fd14a488d0c22aee323959, type: 2}
   m_sharedMaterial: {fileID: -8246502906405709683, guid: 37f74c55a1fd14a488d0c22aee323959,
