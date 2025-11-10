@@ -20,12 +20,24 @@ namespace Players
 
         [SerializeField] private GameObject _leaderboardUI;
 
+        [SerializeField] private KeyCode _skipKey = KeyCode.Percent;
+
         private TextMeshProUGUI _text;
+        private Coroutine _hideCoroutine;
+        private bool _isWaiting = false;
 
         private void Awake()
         {
             _text = GetComponent<TextMeshProUGUI>();
             Refresh();
+        }
+
+        private void Update()
+        {
+            if (!_isWaiting) return;
+
+            if (Input.GetKeyDown(_skipKey))
+                SkipToLeaderboard();
         }
 
         public void Refresh()
@@ -38,13 +50,13 @@ namespace Players
 
         private void InvokeCallbacks(int score, PlayerTag tag)
         {
-            bool IsWinner(int score, PlayerTag tag)
+            bool IsWinner(int s, PlayerTag t)
             {
                 var scores = new int[Enum.GetValues(typeof(PlayerTag)).Length - 2];
                 int j = 0;
                 for (int i = 1; i < Enum.GetValues(typeof(PlayerTag)).Length; i++)
                 {
-                    if ((PlayerTag)i != tag)
+                    if ((PlayerTag)i != t)
                     {
                         scores[j] = PlayerPrefs.GetInt(((PlayerTag)i).ToString());
                         ++j;
@@ -54,7 +66,7 @@ namespace Players
                 bool isWinner = true;
                 foreach (int opponentScores in scores)
                 {
-                    if (opponentScores > score)
+                    if (opponentScores > s)
                     {
                         isWinner = false;
                         break;
@@ -67,32 +79,70 @@ namespace Players
             if (IsWinner(score, tag))
             {
                 _OnGameWined?.Invoke();
-                foreach (var winObj in _winObjects)
-                {
-                    if (winObj != null)
-                        StartCoroutine(HideAfterDelay(winObj, _displayDuration));
-                }
+                StartHideCoroutineForList(_winObjects);
             }
             else
             {
                 _OnGameOver?.Invoke();
-                foreach (var loseObj in _loseObjects)
-                {
-                    if (loseObj != null)
-                        StartCoroutine(HideAfterDelay(loseObj, _displayDuration));
-                }
+                StartHideCoroutineForList(_loseObjects);
             }
         }
 
-        private System.Collections.IEnumerator HideAfterDelay(GameObject obj, float delay)
+        private void StartHideCoroutineForList(List<GameObject> objects)
         {
-            yield return new WaitForSeconds(delay);
-            obj.SetActive(false);
-
-            if (_leaderboardUI != null)
+            if (_hideCoroutine != null)
             {
-                _leaderboardUI.SetActive(true);
+                StopCoroutine(_hideCoroutine);
+                _hideCoroutine = null;
             }
+
+            _hideCoroutine = StartCoroutine(HideObjectsThenShowLeaderboard(objects, _displayDuration));
+        }
+
+        private System.Collections.IEnumerator HideObjectsThenShowLeaderboard(List<GameObject> objects, float delay)
+        {
+            _isWaiting = true;
+
+            float elapsed = 0f;
+            while (elapsed < delay)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            foreach (var obj in objects)
+            {
+                if (obj != null)
+                    obj.SetActive(false);
+            }
+
+            ShowLeaderboard();
+            _isWaiting = false;
+            _hideCoroutine = null;
+        }
+
+        private void SkipToLeaderboard()
+        {
+            if (_hideCoroutine != null)
+            {
+                StopCoroutine(_hideCoroutine);
+                _hideCoroutine = null;
+            }
+
+            foreach (var obj in _winObjects)
+                if (obj != null) obj.SetActive(false);
+
+            foreach (var obj in _loseObjects)
+                if (obj != null) obj.SetActive(false);
+
+            ShowLeaderboard();
+            _isWaiting = false;
+        }
+
+        private void ShowLeaderboard()
+        {
+            if (_leaderboardUI != null)
+                _leaderboardUI.SetActive(true);
         }
     }
 }

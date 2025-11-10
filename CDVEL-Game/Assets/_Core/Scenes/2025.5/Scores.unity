@@ -5501,9 +5501,12 @@ MonoBehaviour:
   _displayDuration: 3
   _winObjects:
   - {fileID: 1105163600}
+  - {fileID: 304818328}
   _loseObjects:
   - {fileID: 1105163600}
+  - {fileID: 304818328}
   _leaderboardUI: {fileID: 23496655}
+  _skipKey: 32
 --- !u!114 &315265123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8909,9 +8912,12 @@ MonoBehaviour:
   _displayDuration: 3
   _winObjects:
   - {fileID: 304818328}
+  - {fileID: 1105163600}
   _loseObjects:
   - {fileID: 304818328}
+  - {fileID: 1105163600}
   _leaderboardUI: {fileID: 23496655}
+  _skipKey: 282
 --- !u!114 &1710211332
 MonoBehaviour:
   m_ObjectHideFlags: 0
