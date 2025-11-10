@@ -4,7 +4,7 @@ using Players; // si tes PlayerScoreHandler sont là
 
 public class SaveTotalScore : MonoBehaviour
 {
-    [SerializeField] private ScoreScriptableObject scoreSO;
+    [SerializeField] private ScoreScriptableObject _scoreScriptable;
 
     public void SaveScoreTotal()
     {
@@ -21,14 +21,14 @@ public class SaveTotalScore : MonoBehaviour
         int total = allScoreHandlers.Sum(handler => handler.GetScore());
 
         // Sauvegarde dans le ScriptableObject
-        scoreSO.TotalScore = total;
+        _scoreScriptable.TotalScore = total;
 
         Debug.Log($"Total score saved in ScriptableObject: {total}");
     }
 
     public void Start()
     {
-        scoreSO.ResetScore();
+        _scoreScriptable.ResetScore();
         Debug.Log("Total score reset in ScriptableObject");
     }
 }

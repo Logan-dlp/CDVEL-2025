@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class DisplayHighScore : MonoBehaviour
 {
-    [SerializeField] private GameObject scoreEntryPrefab;
-    [SerializeField] private Transform scoreListParent;
-    [SerializeField] private RectTransform contentRectTransform;
+    [SerializeField] private GameObject _scoreEntryPrefab;
+    [SerializeField] private Transform _scoreListParent;
+    [SerializeField] private RectTransform _contentRectTransform;
 
     private const float scoreEntryHeight = 76f;
 
@@ -19,8 +19,7 @@ public class DisplayHighScore : MonoBehaviour
 
     public void UpdateScoreDisplay()
     {
-        // 1️⃣ Effacer toutes les entrées existantes avant d’afficher les nouvelles
-        foreach (Transform child in scoreListParent)
+        foreach (Transform child in _scoreListParent)
         {
             Destroy(child.gameObject);
         }
@@ -46,7 +45,6 @@ public class DisplayHighScore : MonoBehaviour
         }
         else
         {
-            // Message vide si aucun score
             CreateScoreEntry(0, "Aucun score enregistré.", 0);
             AdjustContentSize(1);
         }
@@ -55,7 +53,7 @@ public class DisplayHighScore : MonoBehaviour
 
     private void CreateScoreEntry(int rank, string playerName, float score)
     {
-        GameObject scoreEntryObject = Instantiate(scoreEntryPrefab, scoreListParent);
+        GameObject scoreEntryObject = Instantiate(_scoreEntryPrefab, _scoreListParent);
         TextMeshProUGUI[] textComponents = scoreEntryObject.GetComponentsInChildren<TextMeshProUGUI>();
 
         if (textComponents.Length >= 3)
@@ -69,7 +67,7 @@ public class DisplayHighScore : MonoBehaviour
     private void AdjustContentSize(int entryCount)
     {
         float newHeight = scoreEntryHeight * entryCount + 100;
-        contentRectTransform.sizeDelta = new Vector2(contentRectTransform.sizeDelta.x, newHeight);
+        _contentRectTransform.sizeDelta = new Vector2(_contentRectTransform.sizeDelta.x, newHeight);
     }
 
     [ContextMenu("Clear Entire Leaderboard")]

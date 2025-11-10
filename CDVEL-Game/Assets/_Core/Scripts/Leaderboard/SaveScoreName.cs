@@ -2,33 +2,33 @@ using UnityEngine;
 
 public class SaveScoreName : MonoBehaviour
 {
-    [SerializeField] private DisplayNameTeam playerNameDisplay;
-    [SerializeField] private ScoreScriptableObject playerScores;
-    [SerializeField] private DisplayHighScore highScoreDisplay;
+    [SerializeField] private DisplayNameTeam _playerNameDisplay;
+    [SerializeField] private ScoreScriptableObject _playerScores;
+    [SerializeField] private DisplayHighScore _highScoreDisplay;
 
     private bool scoresSaved = false;
 
     private void Start()
     {
-        playerNameDisplay.ActivateInput();
+        _playerNameDisplay.ActivateInput();
     }
 
     private void Update()
     {
-        if (!scoresSaved && playerNameDisplay.IsConfirmed)
+        if (!scoresSaved && _playerNameDisplay.IsConfirmed)
         {
             SaveScores();
             scoresSaved = true;
-            playerNameDisplay.DeactivateInput();
+            _playerNameDisplay.DeactivateInput();
 
-            highScoreDisplay.UpdateScoreDisplay();
+            _highScoreDisplay.UpdateScoreDisplay();
         }
     }
 
     private void SaveScores()
     {
         Debug.Log("Sauvegarde des scores...");
-        SerializeScore.AddScore(playerNameDisplay.PlayerName, playerScores.TotalScore);
-        Debug.Log($"Score de {playerNameDisplay.PlayerName} : {playerScores.TotalScore}");
+        SerializeScore.AddScore(_playerNameDisplay.PlayerName, _playerScores.TotalScore);
+        Debug.Log($"Score de {_playerNameDisplay.PlayerName} : {_playerScores.TotalScore}");
     }
 }

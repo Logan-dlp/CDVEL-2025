@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class DisplayNameTeam : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI playerNameDisplay;
-    public NameScriptableObject playerNameScriptableObject;
-    private string currentName = "";
+    [SerializeField] private TextMeshProUGUI _playerNameDisplay;
+    public NameScriptableObject PlayerNameScriptableObject;
     public bool IsConfirmed { get; private set; }
     public bool IsInputActive { get; private set; }
-    public string PlayerName => currentName;
+    public string PlayerName => _currentName;
 
-    private const int maxCharacters = 10;
+    private string _currentName = "";
+    private const int _maxCharacters = 10;
 
     private void Update()
     {
@@ -18,28 +18,28 @@ public class DisplayNameTeam : MonoBehaviour
         {
             foreach (char c in Input.inputString)
             {
-                if (c == '\b' && currentName.Length > 0)
+                if (c == '\b' && _currentName.Length > 0)
                 {
-                    currentName = currentName.Substring(0, currentName.Length - 1);
+                    _currentName = _currentName.Substring(0, _currentName.Length - 1);
                 }
-                else if ((c == '\n' || c == '\r') && currentName.Length > 0)
+                else if ((c == '\n' || c == '\r') && _currentName.Length > 0)
                 {
                     ConfirmName();
                     return;
                 }
-                else if (!char.IsControl(c) && currentName.Length < maxCharacters)
+                else if (!char.IsControl(c) && _currentName.Length < _maxCharacters)
                 {
-                    currentName += c;
+                    _currentName += c;
                 }
             }
-            playerNameDisplay.text = currentName;
+            _playerNameDisplay.text = _currentName;
         }
     }
 
     private void ConfirmName()
     {
-        Debug.Log("Nom confirmé : " + currentName);
-        playerNameDisplay.text = currentName;
+        Debug.Log("Nom confirmé : " + _currentName);
+        _playerNameDisplay.text = _currentName;
         IsConfirmed = true;
         DeactivateInput();
     }
@@ -49,7 +49,7 @@ public class DisplayNameTeam : MonoBehaviour
         if (!IsInputActive)
         {
             IsInputActive = true;
-            currentName = "";
+            _currentName = "";
             IsConfirmed = false;
             Debug.Log("Saisie activée pour le joueur actuel.");
         }
